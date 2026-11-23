@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#11101a">
+  <meta name="description" content="Headnote is a Discord music bot with 70 slash commands, 12 audio sources, and your own Lavalink node.">
+  <title>Headnote — Music for Discord</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a href="#content" class="skip">Skip to content</a>
+  <header class="top"><div class="wrap top-inner">
+    <a href="/" class="brand"><img src="/icon.svg" width="34" height="34" alt=""> Headnote</a>
+    <nav aria-label="Main navigation"><a href="#features">Features</a><a href="#sources">Sources</a><a href="#commands">Commands</a><a href="#status">Status</a></nav>
+    <a class="button button-light invite" href="#commands">Explore commands <span class="arrow" aria-hidden="true"></span></a>
+  </div></header>
+  <main id="content">
+    <div class="landing">
+      <section class="hero wrap" aria-labelledby="title">
+        <div class="hero-content">
+          <p class="eyebrow">MUSIC BOT FOR DISCORD</p>
+          <h1 id="title">Your sound.<br><em>Your server.</em></h1>
+          <p class="intro">Play tracks, playlists, and live radio in Discord through your own Lavalink node. Shape the mix with audio filters and keep the queue moving with slash commands.</p>
+          <div class="actions"><a class="button button-dark invite" href="#commands">Browse commands <span class="arrow" aria-hidden="true"></span></a><a class="button button-outline" href="#status">View live status</a></div>
+        </div>
+        <aside class="monitor" aria-labelledby="monitor-title">
+          <div class="monitor-header"><span id="monitor-title">Connection overview</span><span id="overview-state" class="pill" aria-live="polite">Checking…</span></div>
+          <div class="monitor-display" aria-hidden="true"><div class="wave" id="wave"></div></div>
+          <dl class="monitor-data">
+            <div><dt>Discord gateway</dt><dd id="overview-discord">Checking…</dd></div>
+            <div><dt>Lavalink node</dt><dd id="overview-node">Checking…</dd></div>
+          </dl>
+          <a class="monitor-link" href="#status">Open status panel <span class="arrow down" aria-hidden="true"></span></a>
+        </aside>
+      </section>
+      <div class="wrap stats">
+        <a href="#commands"><strong>70</strong><span>Slash commands</span></a>
+        <a href="#sources"><strong>12</strong><span>Audio sources</span></a>
+        <a href="#commands"><strong>15</strong><span>Audio filters</span></a>
+        <a href="#status"><strong>v4</strong><span>Personal Lavalink node</span></a>
+      </div>
+    </div>
+    <div class="wrap sections">
+      <section id="features">
+        <header class="section-intro">
+          <p class="eyebrow">BOT FEATURES</p>
+          <h2>Take control of the mix.</h2>
+        </header>
+        <div class="feature-grid">
+          <article><span class="tile-icon" aria-hidden="true">≡</span><h3>Build the queue</h3><p>Queue songs and playlists, move tracks, shuffle the lineup, or revisit what just played.</p></article>
+          <article><span class="tile-icon" aria-hidden="true">~</span><h3>Shape your sound</h3><p>Switch to Nightcore, bring up the bass, or dial in your own speed and pitch.</p></article>
+          <article><span class="tile-icon" aria-hidden="true">#</span><h3>Set the server rules</h3><p>Choose a DJ role, set default volume and search, and route now-playing announcements.</p></article>
+        </div>
+      </section>
+      <section id="sources">
+        <header class="section-intro">
+          <p class="eyebrow">AUDIO SOURCES</p>
+          <h2>12 sources. One queue.</h2>
+          <p class="section-copy">Paste a supported link into <code>/play</code>, search by title, or use <code>/tts</code> for Flowery. Playback depends on the providers enabled on your node.</p>
+        </header>
+        <div id="source-list" class="sources" aria-label="Audio source list"><p>Loading audio sources…</p></div>
+      </section>
+      <section id="commands">
+        <header class="section-intro">
+          <p class="eyebrow">SLASH COMMANDS</p>
+          <h2>Find a command.</h2>
+        </header>
+        <div class="search-row"><label for="command-search">Search commands</label><input type="search" id="command-search" placeholder="Try /play or volume" autocomplete="off"></div>
+        <div id="command-list" class="command-list"><p>Loading commands…</p></div>
+      </section>
+      <section id="status">
+        <div class="section-head"><div><p class="eyebrow">LIVE STATUS</p><h2>Service health</h2></div><button class="button button-outline" id="refresh" type="button">Refresh status</button></div>
+        <div class="status-panel">
+          <div class="service-grid">
+            <article><h3>Website API</h3><p id="api" class="state">Checking…</p><small>Public status endpoint</small></article>
+            <article><h3>Discord bot</h3><p id="discord" class="state">Checking…</p><small id="discord-detail">Discord gateway</small></article>
+            <article><h3>Lavalink REST</h3><p id="lavalink" class="state">Checking…</p><small id="node-detail">Audio node API</small></article>
+            <article><h3>Lavalink WebSocket</h3><p id="gateway" class="state">Checking…</p><small>Bot connection to the audio node</small></article>
+          </div>
+          <div class="status-foot"><p id="checked" role="status">Checking services…</p><a href="/api/status">View JSON API</a></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap footer"><a href="/" class="brand"><img src="/icon.svg" width="28" height="28" alt=""> Headnote</a><span>Music for Discord</span><a href="#status">Service health</a></div></footer>
+</body>
+</html>
